@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golf Made Simple – Daisy Fitzpatrick Online Coaching</title>
+  <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary:#004aad;
+      --secondary:#00804b;
+      --light:#f8f9fa;
+      --dark:#222;
+      --radius:12px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Abhaya Libre', serif;}
+    body{line-height:1.6;color:var(--dark);background:var(--light);}    
+    header{background:url('https://images.unsplash.com/photo-1608571423902-bf7bbf688cab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;height:65vh;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;position:relative;}
+    header::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55);}    
+    header .hero{position:relative;z-index:2;max-width:800px;padding:0 1rem;}
+    header h1{font-size:3rem;margin-bottom:.5rem;}
+    header p{font-size:1.25rem;}
+    header .cta-btn{display:inline-block;margin-top:1.5rem;padding:.75rem 1.5rem;background:var(--primary);color:#fff;border:none;border-radius:var(--radius);font-size:1rem;cursor:pointer;text-decoration:none;transition:opacity .3s;}
+    header .cta-btn:hover{opacity:.85;}
+    section{padding:3rem 1rem;max-width:1100px;margin:auto;}
+    .flex{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;}
+    .card{background:#fff;border-radius:var(--radius);padding:2rem;box-shadow:0 4px 12px rgba(0,0,0,.1);flex:1 1 280px;max-width:320px;text-align:center;}
+    .card h3{margin-bottom:.5rem;color:var(--primary);}    
+    .pricing .price{font-size:2rem;font-weight:bold;margin:1rem 0;color:var(--secondary);}    
+    .pricing button{background:var(--secondary);color:#fff;padding:.75rem 1.25rem;border:none;border-radius:var(--radius);cursor:pointer;transition:opacity .3s;font-size:1rem;}
+    .pricing button:hover{opacity:.85;}
+    .how li{margin-bottom:.75rem;}
+    form{background:#fff;padding:2rem;border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,.1);}    
+    form h2{margin-bottom:1rem;color:var(--primary);}    
+    label{display:block;margin:.75rem 0 .25rem;font-weight:bold;}
+    input,select,textarea{width:100%;padding:.5rem;border:1px solid #ccc;border-radius:var(--radius);}    
+    input[type="radio"]{width:auto;margin-right:.5rem;}    
+    .inline{display:flex;align-items:center;margin:.5rem 0;gap:.5rem;}
+    .submit-btn{background:var(--primary);color:#fff;padding:.75rem 1.25rem;border:none;border-radius:var(--radius);cursor:pointer;transition:opacity .3s;font-size:1rem;width:100%;margin-top:1rem;}
+    .submit-btn:hover{opacity:.85;}
+    footer{background:var(--dark);color:#fff;text-align:center;padding:1rem 0;margin-top:3rem;}
+    .faq-item{margin-bottom:1.5rem;}
+    .faq-item h4{margin-bottom:.5rem;color:var(--primary);font-size:1.2rem;}
+    @media(max-width:768px){header h1{font-size:2.4rem;}header p{font-size:1rem;}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <h1>Golf Made Simple</h1>
+      <p>Cost-efficient. Personalized. On your schedule. Harness pro-level video technology that catches what the eye can’t.</p>
+      <a href="#pricing" class="cta-btn">View Plans</a>
+    </div>
+  </header>
+
+  <!-- Benefits -->
+  <section class="features">
+    <h2 style="text-align:center;margin-bottom:2rem;color:var(--primary);">Why Online Coaching?</h2>
+    <div class="flex">
+      <div class="card">
+        <h3>Save Money</h3>
+        <p>In-person lessons can cost $200 each with less feedback and homework.</p>
+      </div>
+      <div class="card">
+        <h3>Technology Edge</h3>
+        <p>High-speed video analysis and AI tools—built with insights from thousands of PGA pros—spot what human eyes miss.</p>
+      </div>
+      <div class="card">
+        <h3>Learn Anytime</h3>
+        <p>Record swings at your convenience and get actionable drills within 48 hours—no need to sync calendars.</p>
+      </div>
+      <div class="card">
+        <h3>Truly Personalized</h3>
+        <p>Every drill, cue, and practice plan is crafted for <em>your</em> swing, goals, and available gear.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how">
+    <h2 style="text-align:center;margin-bottom:2rem;color:var(--primary);">How It Works</h2>
+    <div style="padding:75% 0 0 0;position:relative; margin-bottom:2rem;">
+      <iframe src="https://player.vimeo.com/video/1099492994?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="a39f035663d3a32b4a856772cecede19590a59c4"></iframe>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <ol style="max-width:700px;margin:auto;font-size:1.1rem;">
+      <li>Choose a plan below and fill out a short questionnaire.</li>
+      <li>Download our mobile app (iOS & Android) and record your swing with guided angles.</li>
+      <li>Receive a detailed video breakdown, voice-over analysis, and your personalized drill playlist.</li>
+      <li>Upload follow-up swings to track progress. We’ll refine your drills after every review.</li>
+    </ol>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing">
+    <h2 style="text-align:center;margin-bottom:2rem;color:var(--primary);">Choose Your Plan</h2>
+    <div class="flex">
+      <div class="card">
+        <h3>2 Lessons</h3>
+        <p class="price">$299</p>
+        <p>Includes personalized drills and coaching via app</p>
+        <button onclick="selectPlan('2 Lessons ($299)')">Select</button>
+      </div>
+      <div class="card" style="border:3px solid var(--secondary);">
+        <h3>4 Lessons</h3>
+        <p class="price">$399</p>
+        <p>Includes personalized drills and coaching via app</p>
+        <button onclick="selectPlan('4 Lessons ($399)')">Select</button>
+      </div>
+      <div class="card">
+        <h3>10 Lessons</h3>
+        <p class="price">$549</p>
+        <p>Includes personalized drills and coaching via app</p>
+        <button onclick="selectPlan('10 Lessons ($549)')">Select</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sign-Up Form -->
+  <section id="signup">
+    <form action="https://formspree.io/f/mrbkwbwb" method="POST">
+      <h2>Sign Up & Start Improving</h2>
+      <input type="hidden" name="selected_plan" id="selected_plan" value="">
+
+      <label for="name">Full Name *</label>
+      <input id="name" name="name" type="text" required>
+
+      <label for="email">Email *</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="phone">Phone (optional)</label>
+      <input id="phone" name="phone" type="tel">
+
+      <label for="experience">Golf Experience *</label>
+      <select id="experience" name="experience" required>
+        <option value="" disabled selected>Select one</option>
+        <option>Beginner (0–1 yrs)</option>
+        <option>Intermediate (1–5 yrs)</option>
+        <option>Advanced (5+ yrs)</option>
+        <option>Competitive</option>
+      </select>
+
+      <label>Do you own clubs? *</label>
+      <div class="inline"><input type="radio" id="clubs_yes" name="clubs" value="Yes" required><label for="clubs_yes">Yes</label></div>
+      <div class="inline"><input type="radio" id="clubs_no" name="clubs" value="No" required><label for="clubs_no">No</label></div>
+
+      <label>How would you like to kick off? *</label>
+      <div class="inline"><input type="radio" id="intro_call" name="kickoff" value="Face-to-Face Call" required><label for="intro_call">Face-to-Face Call</label></div>
+      <div class="inline"><input type="radio" id="schedule_lesson" name="kickoff" value="Schedule First Lesson" required><label for="schedule_lesson">Skip call, schedule lesson</label></div>
+
+      <label for="notes">Anything else we should know?</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Goals, swing issues, time constraints…"></textarea>
+
+      <button class="submit-btn" type="submit">Submit & Checkout</button>
+    </form>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq">
+    <h2 style="text-align:center;margin-bottom:2rem;color:var(--primary);">FAQs</h2>
+    <div style="max-width:800px;margin:auto;">
+      <div class="faq-item">
+        <h4>How do I schedule my lessons?</h4>
+        <p>Your first lesson will be ready within 48 hours of booking. After each lesson, your next one will be delivered within another 48 hours—often even faster (usually 24).</p>
+      </div>
+      <div class="faq-item">
+        <h4>What equipment do I need to get started?</h4>
+        <p>You’ll need a smartphone to record your swing and ideally your own golf clubs. If you’re just getting started and don’t have clubs yet, we can still help guide your first steps.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How long do I have to use my lessons?</h4>
+        <p>We suggest clients complete one lesson per week, but your lessons do not expire at the moment. Take them at a pace that works best for you.</p>
+      </div>
+    <div class="faq-item">
+        <h4>What if I’m a complete beginner?</h4>
+        <p>Perfect! Many of our clients are just starting out. Our step-by-step video feedback and personalized drills make it easy to build fundamentals at your own pace.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How do I record my swing?</h4>
+        <p>Once you sign up, we’ll send you a quick guide on how to record from the right angles using your phone. You don’t need a fancy setup—we’ll help you get everything you need with just a smartphone.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I message my coach with questions?</h4>
+        <p>Yes! You’ll have access to your coach through the mobile app, so you can ask questions, get clarifications, and stay on track between lessons.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Golf Made Simple. All rights reserved.</p>
+  </footer>
+
+<script>
+  function selectPlan(plan){
+    document.getElementById('selected_plan').value = plan;
+    window.location.href = '#signup';
+    setTimeout(()=>document.getElementById('name').focus(),300);
+  }
+</script>
+</body>
+</html>
