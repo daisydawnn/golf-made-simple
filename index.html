@@ -223,33 +223,39 @@ src="https://www.facebook.com/tr?id=640024615773573&ev=PageView&noscript=1"
     setTimeout(()=>document.getElementById('name').focus(),300);
   }
 
-  document.getElementById('checkoutForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+ document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+  e.preventDefault();
 
-    const form = e.target;
-    const formData = new FormData(form);
-    const selectedPlan = formData.get('selected_plan');
+  const form = e.target;
+  const formData = new FormData(form);
+  const selectedPlan = formData.get('selected_plan');
 
-    fetch('https://formspree.io/f/mrbkwbwb', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: formData
-    }).then(response => {
-      if (response.ok) {
-        let redirectURL = '';
-        if (selectedPlan.includes('10')) {
-          redirectURL = 'https://buy.stripe.com/7sYbJ26Nm2L7dmD8xF7Vm00';
-        } else if (selectedPlan.includes('4')) {
-          redirectURL = 'https://buy.stripe.com/dRmcN61t271n82jaFN7Vm01';
-        } else if (selectedPlan.includes('2')) {
-          redirectURL = 'https://buy.stripe.com/cNifZic7G2L71DV0197Vm02';
-        }
-        window.location.href = redirectURL;
-      } else {
-        alert('There was an issue submitting your form. Please try again.');
+  // NEW: force redirect if no plan selected
+  if (!selectedPlan) {
+    window.location.href = 'https://buy.stripe.com/7sYbJ26Nm2L7dmD8xF7Vm00';
+    return;
+  }
+
+  fetch('https://formspree.io/f/mrbkwbwb', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: formData
+  }).then(response => {
+    if (response.ok) {
+      let redirectURL = '';
+      if (selectedPlan.includes('10')) {
+        redirectURL = 'https://buy.stripe.com/7sYbJ26Nm2L7dmD8xF7Vm00';
+      } else if (selectedPlan.includes('4')) {
+        redirectURL = 'https://buy.stripe.com/dRmcN61t271n82jaFN7Vm01';
+      } else if (selectedPlan.includes('2')) {
+        redirectURL = 'https://buy.stripe.com/cNifZic7G2L71DV0197Vm02';
       }
-    });
+      window.location.href = redirectURL;
+    } else {
+      alert('There was an issue submitting your form. Please try again.');
+    }
   });
+});
 </script>
 </body>
 </html>
