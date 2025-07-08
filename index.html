@@ -236,15 +236,7 @@ src="https://www.facebook.com/tr?id=640024615773573&ev=PageView&noscript=1"
       body: formData
     }).then(response => {
       if (response.ok) {
-        let redirectURL = '';
-        if (selectedPlan.includes('10')) {
-          redirectURL = 'https://buy.stripe.com/7sYbJ26Nm2L7dmD8xF7Vm00';
-        } else if (selectedPlan.includes('4')) {
-          redirectURL = 'https://buy.stripe.com/dRmcN61t271n82jaFN7Vm01';
-        } else if (selectedPlan.includes('2')) {
-          redirectURL = 'https://buy.stripe.com/cNifZic7G2L71DV0197Vm02';
-        }
-        window.location.href = redirectURL;
+        window.location.href = 'https://buy.stripe.com/7sY00k5JigBX82j5lt7Vm03';
       } else {
         alert('There was an issue submitting your form. Please try again.');
       }
