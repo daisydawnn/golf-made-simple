@@ -50,6 +50,10 @@
     footer{background:var(--dark);color:#fff;text-align:center;padding:1rem 0;margin-top:3rem;}
     .faq-item{margin-bottom:1.5rem;}
     .faq-item h4{margin-bottom:.5rem;color:var(--primary);font-size:1.2rem;}
+    /* Hide signup form by default when JavaScript is enabled */
+    .form-hidden{display:none;}
+    .form-visible{display:block;animation:fadeIn 0.3s ease-in;}
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
     @media(max-width:768px){header h1{font-size:2.4rem;}header p{font-size:1rem;}}
   </style>
   <!-- Meta Pixel Code -->
@@ -217,8 +221,24 @@ src="https://www.facebook.com/tr?id=640024615773573&ev=PageView&noscript=1"
   </footer>
 
 <script>
+  // Hide the signup form by default when JavaScript is enabled
+  document.addEventListener('DOMContentLoaded', function() {
+    const signupSection = document.getElementById('signup');
+    if (signupSection) {
+      signupSection.classList.add('form-hidden');
+    }
+  });
+
   function selectPlan(plan){
     document.getElementById('selected_plan').value = plan;
+    
+    // Show the signup form
+    const signupSection = document.getElementById('signup');
+    if (signupSection) {
+      signupSection.classList.remove('form-hidden');
+      signupSection.classList.add('form-visible');
+    }
+    
     window.location.href = '#signup';
     setTimeout(()=>document.getElementById('name').focus(),300);
   }
