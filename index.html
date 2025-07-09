@@ -177,11 +177,28 @@ src="https://www.facebook.com/tr?id=640024615773573&ev=PageView&noscript=1"
 
       <label for="notes">Anything else we should know?</label>
       <textarea id="notes" name="notes" rows="4" placeholder="Goals, swing issues, time constraints…"></textarea>
-
+<p id="plan-reminder" style="color: #b00; font-weight: bold;">Please select a plan above before submitting!</p>
       <button class="submit-btn" type="submit">Submit & Checkout</button>
     </form>
   </section>
-
+<script>
+  document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+    const selectedPlan = document.getElementById('selected_plan').value;
+    if (!selectedPlan) {
+      e.preventDefault();
+      // Show a visible error message
+      let reminder = document.getElementById('plan-reminder');
+      if (reminder) {
+        reminder.style.display = 'block';
+        reminder.textContent = 'Please select a plan above before submitting!';
+      }
+      // Optionally, also show alert
+      alert('Please select a plan above before submitting!');
+      return;
+    }
+    // ... your fetch logic ...
+  });
+</script>
   <!-- FAQ Section -->
   <section id="faq">
     <h2 style="text-align:center;margin-bottom:2rem;color:var(--primary);">FAQs</h2>
@@ -247,27 +264,29 @@ src="https://www.facebook.com/tr?id=640024615773573&ev=PageView&noscript=1"
     const formData = new FormData(form);
     const selectedPlan = formData.get('selected_plan');
 
+    // Always submit to Formspree first
     fetch('https://formspree.io/f/mrbkwbwb', {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: formData
     }).then(response => {
       if (response.ok) {
-        let redirectURL = '';
-        if (selectedPlan && selectedPlan.includes('10')) {
-          redirectURL = 'https://buy.stripe.com/7sYbJ26Nm2L7dmD8xF7Vm00';
-        } else if (selectedPlan && selectedPlan.includes('4')) {
-          redirectURL = 'https://buy.stripe.com/dRmcN61t271n82jaFN7Vm01';
-        } else if (selectedPlan && selectedPlan.includes('2')) {
-          redirectURL = 'https://buy.stripe.com/cNifZic7G2L71DV0197Vm02';
-        } else {
-          // No plan selected, go to 10-pack
-          redirectURL = 'https://buy.stripe.com/7sYbJ26Nm2L7dmD8xF7Vm00';
+        let redirectURL = 'https://buy.stripe.com/7sYbJ26Nm2L7dmD8xF7Vm00'; // Default to 10 pack
+        if (selectedPlan) {
+          if (selectedPlan.includes('10')) {
+            redirectURL = 'https://buy.stripe.com/7sYbJ26Nm2L7dmD8xF7Vm00';
+          } else if (selectedPlan.includes('4')) {
+            redirectURL = 'https://buy.stripe.com/dRmcN61t271n82jaFN7Vm01';
+          } else if (selectedPlan.includes('2')) {
+            redirectURL = 'https://buy.stripe.com/cNifZic7G2L71DV0197Vm02';
+          }
         }
         window.location.href = redirectURL;
       } else {
         alert('There was an issue submitting your form. Please try again.');
       }
+    }).catch(() => {
+      alert('There was an error connecting to the server. Please try again.');
     });
   });
 </script>
