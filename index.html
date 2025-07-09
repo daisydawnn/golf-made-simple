@@ -273,6 +273,16 @@ src="https://www.facebook.com/tr?id=640024615773573&ev=PageView&noscript=1"
     }
   });
 });
+  <script>
+document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+    // Check if any radio button with name 'plan' is checked
+    const planSelected = document.querySelector('input[name="plan"]:checked');
+    if (!planSelected) {
+        alert('Please select a plan before submitting.');
+        event.preventDefault(); // Prevent form submission
+    }
+});
+</script>
 </script>
 </body>
 </html>
