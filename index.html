@@ -290,7 +290,18 @@ src="https://www.facebook.com/tr?id=640024615773573&ev=PageView&noscript=1"
   window.location.href = '#signup';
   setTimeout(()=>document.getElementById('name').focus(),300);
 }
+function selectPlan(plan){
+  // Highlight selected card (if using highlight logic)
+  document.getElementById('selected_plan').value = plan;
 
+  // Scroll to the form reliably
+  var signupSection = document.getElementById('signup');
+  if (signupSection) {
+    signupSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  setTimeout(()=>document.getElementById('name').focus(),300);
+}
     // Always submit to Formspree first
     fetch('https://formspree.io/f/mrbkwbwb', {
       method: 'POST',
