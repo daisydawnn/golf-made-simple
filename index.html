@@ -25,6 +25,53 @@
       text-align:center;
       position:relative;
     }
+    /* Top Navigation */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e6ea;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo a {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-left: 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.nav-cta {
+  background: var(--primary);
+  color: #fff !important;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius);
+}
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+  .nav-links a {
+    margin-left: 0.5rem;
+    font-size: 0.95rem;
+  }
+}
+
     header::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55);}    
     header .hero{position:relative;z-index:2;max-width:800px;padding:0 1rem;}
     header h1{font-size:3rem;margin-bottom:.5rem;}
@@ -73,6 +120,20 @@ src="https://www.facebook.com/tr?id=640024615773573&ev=PageView&noscript=1"
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+  <!-- Top Navigation -->
+<nav class="top-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="#top">Made Simple Golf</a>
+    </div>
+    <div class="nav-links">
+      <a href="#pricing">Lessons</a>
+      <a href="/guide.html">Golf Tips</a>
+      <a href="#signup" class="nav-cta">Get Started</a>
+    </div>
+  </div>
+</nav>
+
   <header>
     <div class="hero">
       <h1>Made Simple Golf</h1>
